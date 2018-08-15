@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="jenkins-test-suite.xml" />
+	<munit:test name="jenkins-test-suite-helloFlowTest" description="Test" doc:id="76c95921-9be3-44b8-8183-36effe3f9acf" >
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to helloFlow" doc:id="1f7510d3-e774-483d-9c50-524d056f0e49" name="helloFlow"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:assert-that doc:name="Assert that" doc:id="5900a7d1-d1f2-4553-9cd2-7d07386c1575" expression='good morning' is="[MunitTools::equalTo('good morning')"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
